@@ -2081,3 +2081,22 @@ footer {
     text-decoration: none;
   }
 }
+
+#frontexplore {
+  background: linear-gradient(to right, #1e3c72, #2a5298); /* Blue gradient */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+#frontexplore:hover {
+  background: linear-gradient(to right, #2a5298, #1e3c72); /* Hover effect with reversed gradient */
+}
