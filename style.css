@@ -103,7 +103,7 @@ body {
   background: #262626;
 }
 
-#navitem{
+#navitem {
   margin: 0 15px;
 }
 nav {
@@ -119,7 +119,6 @@ nav ul {
 nav ul li {
   float: left;
   position: relative;
-  
 }
 nav ul li a,
 nav ul li a:visited {
@@ -133,7 +132,7 @@ nav ul li a:visited {
 }
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background: #2581DC;
+  background: #2581dc;
   color: #ffffff;
 }
 nav ul li a:not(:only-child):after,
@@ -228,7 +227,8 @@ nav ul li ul li a {
 #nav-toggle.active span {
   background-color: transparent;
 }
-#nav-toggle.active span:before, #nav-toggle.active span:after {
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
   top: 0;
 }
 #nav-toggle.active span:before {
@@ -237,7 +237,6 @@ nav ul li ul li a {
 #nav-toggle.active span:after {
   transform: rotate(-45deg);
 }
-
 
 /* @media screen and (max-width: 1000px) {
   #navbar{
@@ -356,13 +355,14 @@ a {
 }
 
 #nright h3 {
-  color: #636363;
+  color: #111;
   font-size: 17px;
 }
 
 #nright h3 i {
   font-size: 20px;
   margin: 1px;
+  color: #111;
 }
 #nav3 {
   background-color: #fff;
@@ -389,7 +389,7 @@ a {
   /* border: 2px solid #a9a9a9; */
   border: none;
 }
-#menuhover{
+#menuhover {
   color: #fff;
   background-color: #363535a8;
   padding: 5px 10px 20px 20px;
@@ -646,10 +646,12 @@ a {
   font-size: 3rem;
   font-family: "Helvetica Neue";
   font-weight: 300;
+  background: -webkit-linear-gradient(#0b4a8d, #e6e6e9);
+  -webkit-text-fill-color: transparent;
   /* mix-blend-mode: difference; */
 }
 #over1 h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 2vw 2.2vw;
   /* background-color: blue; */
   border-radius: 50%;
@@ -663,7 +665,7 @@ a {
   /* background-color: yellow; */
 }
 #over2 h2 {
-  font-size: 1.3vw;
+  font-size: 1.75rem;
   font-weight: 500;
 }
 @media screen and (max-width: 700px) {
@@ -1139,7 +1141,7 @@ input[type="radio"] {
   text-align: center;
   padding: 20px;
   background-color: #111;
-  color: #fff; /* Initial background color */
+  color: #111; /* Initial background color */
   transition: background-color 0.3s ease; /* Smooth transition for background color */
   position: relative; /* Needed for text glow effect */
   z-index: 1; /* Ensure text is above pseudo-element */
@@ -1617,7 +1619,7 @@ input {
   bottom: -10px;
   width: 25px;
   height: 4px;
-   background: #cf9818;
+  background: #cf9818;
   font-family: Montserrat;
 }
 
@@ -1864,7 +1866,7 @@ footer {
   overflow-x: hidden;
   font-size: 1.2em;
   margin-bottom: 10px;
-  color: rgb(141, 141, 241);; /* Initial color */
+  color: rgb(141, 141, 241); /* Initial color */
   /* animation: moveText 10s linear infinite, changeColor 2s linear infinite alternate; */
 }
 
@@ -2080,23 +2082,4 @@ footer {
     color: #626161;
     text-decoration: none;
   }
-}
-
-#frontexplore {
-  background: linear-gradient(to right, #1e3c72, #2a5298); /* Blue gradient */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-  transition: background 0.3s ease;
-}
-
-#frontexplore:hover {
-  background: linear-gradient(to right, #2a5298, #1e3c72); /* Hover effect with reversed gradient */
 }
