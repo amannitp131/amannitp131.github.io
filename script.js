@@ -32,6 +32,30 @@ function navAnimation() {
 }
 navAnimation();
 
+(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+
 // This is a function to add locomaotive JS for Scrolling
 function locomotive() {
   gsap.registerPlugin(ScrollTrigger);
@@ -202,13 +226,6 @@ document.addEventListener("DOMContentLoaded", function () {
       autoSlide = setInterval(nextSlide, slideInterval);
     });
 
-  // Add click event to indicators
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener("click", function () {
-      goToSlide(index);
-    });
-  });
-
   // Add keyboard navigation
   document.addEventListener("keydown", function (event) {
     if (event.key === "ArrowRight") {
@@ -303,40 +320,46 @@ function footerAnimation() {
 }
 footerAnimation();
 
-
 // Hero page image slider
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = ["./content/alienware.png","./content/support.png","./content/ai.png"];
-    let currentSlide = 0;  
-    const heroImg = document.getElementById('hero-img');
-    const leftArrow = document.getElementById('l');
-    const rightArrow = document.getElementById('r');
-    const slideNumber = document.querySelector('#over1 h2');
-
-    
+function heroSliderAnimation() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = [
+      "./content/alienware.png",
+      "./content/support.png",
+      "./content/dellOffer.png",
+    ];
+    const overH1text = [
+      "The Ultimate <br> Gaming Powerhouse",
+      "Dell Support",
+      "Dell Offers",
+    ];
+    let currentSlide = 0;
+    const heroImg = document.getElementById("hero-img");
+    const leftArrow = document.getElementById("l");
+    const rightArrow = document.getElementById("r");
+    const slideNumber = document.querySelector("#over1 h2");
+    const overH1 = document.querySelector("#over1 h1");
     function updateSlide() {
       heroImg.style.backgroundImage = `url(${slides[currentSlide]})`;
       slideNumber.textContent = `0${currentSlide + 1}`;
+      overH1.innerHTML = `${overH1text[currentSlide]}`;
     }
 
-   
-    leftArrow.addEventListener('click', function() {
+    leftArrow.addEventListener("click", function () {
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       updateSlide();
     });
 
-    rightArrow.addEventListener('click', function() {
+    rightArrow.addEventListener("click", function () {
       currentSlide = (currentSlide + 1) % slides.length;
       updateSlide();
     });
-     // Automatic slide change every 5 seconds
-     setInterval(function() {
+    // Automatic slide change every 5 seconds
+    setInterval(function () {
       currentSlide = (currentSlide + 1) % slides.length;
       updateSlide();
     }, 5000);
-
-   
     updateSlide();
   });
-
-
+}
+heroSliderAnimation();
